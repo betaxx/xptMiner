@@ -15,10 +15,8 @@ For this project I tried to focus on clean code as well merging all the various 
 
 for now here's a windows executables
 
+https://www.dropbox.com/s/6wsgtiyr9ee903k/xptMinerWindowsAllDevsOpt.zip
 
-Note this is not the one of the version here :)
-
-https://dl.dropboxusercontent.com/u/105316582/xptMiner-clintarWin.zip
 
 This has a 1% donation which can be set using the -d option (-d 2.5 would be 2.5% donation)
 

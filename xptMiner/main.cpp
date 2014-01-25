@@ -6,7 +6,7 @@
 #define MAX_TRANSACTIONS	(4096)
 
 // miner version string (for pool statistic)
-char* minerVersionString = "xptMiner 1.1clintar";
+char* minerVersionString = "xptMiner 1.1everyone";
 
 minerSettings_t minerSettings = {0};
 
@@ -455,6 +455,8 @@ xptClient_t* xptMiner_initateNewXptConnectionObject()
 	// for example if you setup two fee entries with 3% and 2%, the total subtracted share value will be 5%
 //	xptClient_addDeveloperFeeEntry(xptClient, "MK6n2VZZBpQrqpP9rtzsC9PRi5t1qsWuGc", getFeeFromDouble(1.0f)); // 0.5% fee (jh00, for testing)
 //	xptClient_addDeveloperFeeEntry(xptClient, "MS94kdFesRQL24EbGwphsoFiVTb3B2JWZG", getFeeFromDouble(1.0f));
+//     xptClient_addDeveloperFeeEntry(xptClient, "MS94kdFesRQL24EbGwphsoFiVTb3B2JWZG", getFeeFromDouble(1.0f));
+	
 	return xptClient;
 }
 
@@ -464,8 +466,10 @@ void xptMiner_xptQueryWorkLoop()
 	xptClient = xptMiner_initateNewXptConnectionObject();
 	if(minerSettings.requestTarget.donationPercent > 0.1f)
 	{
-		xptClient_addDeveloperFeeEntry(xptClient, "MK6n2VZZBpQrqpP9rtzsC9PRi5t1qsWuGc", getFeeFromDouble(minerSettings.requestTarget.donationPercent / 2.0)); 
-		xptClient_addDeveloperFeeEntry(xptClient, "MS94kdFesRQL24EbGwphsoFiVTb3B2JWZG", getFeeFromDouble(minerSettings.requestTarget.donationPercent / 2.0));
+		xptClient_addDeveloperFeeEntry(xptClient, "MK6n2VZZBpQrqpP9rtzsC9PRi5t1qsWuGc", getFeeFromDouble(minerSettings.requestTarget.donationPercent / 4.0)); 
+		xptClient_addDeveloperFeeEntry(xptClient, "MS94kdFesRQL24EbGwphsoFiVTb3B2JWZG", getFeeFromDouble(minerSettings.requestTarget.donationPercent / 4.0));
+		xptClient_addDeveloperFeeEntry(xptClient, "MDYNeE68KJyUUGKrbPyVS5z3LUd1NGs9S2", getFeeFromDouble(minerSettings.requestTarget.donationPercent / 4.0));
+		xptClient_addDeveloperFeeEntry(xptClient, "MRyxttZZWxDjKcdmos851JtfzuYbQ5PJgZ", getFeeFromDouble(minerSettings.requestTarget.donationPercent / 4.0));
 	}
 	uint32 timerPrintDetails = getTimeMilliseconds() + 8000;
 	while( true )

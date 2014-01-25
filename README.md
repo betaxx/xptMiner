@@ -26,6 +26,6 @@ HELP NEEDED
 
 My work has been based on the major optimisations of the fugue algorithm found here:
 
-http://www.metu.edu.tr/~ccalik/software.html
+https://github.com/betaxx/xptMinerOpt
 
 This gives you  50% speed of current BUT does not match the shares ;) So have a look at it and you migh find some good optmisations.
